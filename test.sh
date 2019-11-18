@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # download the node modules
-# npm install
+npm install
+ng build --prod
 
 # remove the container if exists or running 
 if [ $(docker container ls -q -a --filter name=my_client_container) != '' ]; then
