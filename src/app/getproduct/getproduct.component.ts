@@ -8,6 +8,7 @@ import { ProductService } from '../product.service';
 export class GetproductComponent implements OnInit {
 
   products:any;
+  DatabaseError:any;
 
   constructor(private service:ProductService){
 
@@ -17,8 +18,17 @@ export class GetproductComponent implements OnInit {
   getProduct(){
 
     this.service.getProduct().subscribe(response=>{
+      let body;
+      body=response.json();
+      console.log(body);
+      if(body['status']==="success"){
+        this.DatabaseError="";
+        this.products=body['data'];
+      }else{
+        this.DatabaseError=body['error']
+        this.products=[];
+      }
 
-      this.products=response.json();
 
 
     })
