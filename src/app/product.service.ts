@@ -6,7 +6,7 @@ import {Http} from '@angular/http';
 })
 export class ProductService {
 
-  url="http://200.0.1.91:4001/product";
+  url="http://200.0.1.91:4000/product";
   constructor(private http:Http) { }
 
   getProduct(){
@@ -15,6 +15,6 @@ export class ProductService {
   }
 
   Test(){
-    return this.http.get("http://200.0.1.91:3000/");
+    return this.http.get("http://200.0.1.91:4000/");
   }
 }
