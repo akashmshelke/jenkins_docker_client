@@ -1,6 +1,6 @@
-FROM 200.0.1.100:5000/ubuntu-apache
+FROM httpd
 
-COPY dist/Test /var/www/html
+COPY dist/Test /usr/local/apache2/htdocs/
 
 EXPOSE 80
 
